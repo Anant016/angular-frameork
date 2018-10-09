@@ -30,8 +30,6 @@ export class RegisterComponent implements OnInit {
 
   getStat5(){
     let check=this.password;
-
-
     if (JSON.stringify(check).length>=10){
       return true;
     }

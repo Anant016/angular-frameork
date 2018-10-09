@@ -1,6 +1,8 @@
 <div *ngIf="user">
     <form (submit)="changePass()">
-      <label class="label">Old Password:</label><input [(ngModel)]="oldpass" name="oldpass" type="password" autofocus>
+        <label class="label">User name:</label><input [(ngModel)]="username" name="username" type="text" autofocus>
+        <br>
+      <label class="label">Old Password:</label><input [(ngModel)]="password" name="password" type="password" autofocus>
       <br>
       <label class="label">New Password:</label><input [(ngModel)]="password1" name="password1" type="password" >
       <br>

@@ -70,12 +70,12 @@ export class AuthService {
       .map(res=>res.json());
   }
 
-  checkOldp(oldpass){
+  changePass(user){
     let headers=new Headers();
     console.log('InAuthService')
     headers.append('Content-Type','application/json');
 
-    return this.http.post('users/passchange',oldpass, {headers:headers})
+    return this.http.post('users/passchange',user, {headers:headers})
       .map(res=>res.json());
   }
 }
