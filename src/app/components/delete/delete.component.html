@@ -1,0 +1,7 @@
+<div *ngIf="user">
+  <form (submit)="delSure()">
+    <label class="label">Enter your username to confirm:</label>
+    <input [(ngModel)]="username" name="username" type="text" autofocus>
+    <input type="submit" class="btn" value="Are you Sure??">
+  </form>
+</div>

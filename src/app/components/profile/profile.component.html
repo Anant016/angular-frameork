@@ -1,10 +1,26 @@
 
-<div *ngIf="user">
-    <h2 class="page-header">
+<div *ngIf="user" >
+    <div class="row">
+      <div class="col">
+   <h2 class="page-header">
       {{user.name}}
     </h2>
     <ul class="list-group">
       <li class="list-item">Username:{{user.username}}</li>
       <li class="list-item">Email:{{user.email}}</li>
     </ul>
- </div>
+    </div><!--col1-->
+   
+    <div style="text-align: right" class="col">
+        <button style="width:300px;height:60px" class="btn" (click)="collapse()"  >
+            Settings<br><i class="tiny material-icons align-items-center">all_inclusive</i></button>
+        <div id="idpara" style="display:none" class="mt-3">
+           <button  type="button" style="text-align:center;width: 170px" [routerLink]="['/delete']" class="btn " >Delete my Account.</button><br><br>
+           <button  type="button"style="text-align:center;width: 170px"  [routerLink]="['/passchange']" class="btn " >Change Password.</button>
+       </div><!--col2-->
+    </div>
+  </div><!--row-->
+    
+</div>
+
+

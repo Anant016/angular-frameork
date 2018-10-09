@@ -23,7 +23,21 @@ export class ProfileComponent implements OnInit {
         console.log(err);
         return false;
     });
+
+  
   }
+
+  
+  
+collapse(){
+   var item=document.getElementById('idpara');
+   if(item.style.display=='none'){
+     item.style.display='block';
+   }
+   else{
+    item.style.display='none'
+   }
+}
 
 
 

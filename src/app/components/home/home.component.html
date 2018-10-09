@@ -1,8 +1,21 @@
 <div class="jumbotron text-center">
-    <h1>Anant Rungta</h1>
-    <p class="lead">Welcome to my site<small> -this is Anant Rungta</small></p>
+    <h1 class="lead " style="font-size: 60px" >Anant Rungta</h1>
+    <p class="lead">Welcome to my site<small> -this is Anant Rungta</small></p><br>
     <div>
       <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
       <a class="btn btn-primary" [routerLink]="['/login']">Login</a>
     </div>
   </div>
+
+
+  <div id="1" class="fixed-bottom alert alert-dismissible fade show" style="background-color: black; border-radius: 0px">
+      <div style="color: white" class="row">
+          <div class="col ml-4 mb-3 mt-2">
+              This websites place cookies on your device to give you the best user experience. By using our websites, you agree to the placement of these cookies. To learn more, read our<br> <a href="#"><u>Privacy Policy.</u></a>
+          </div><!-- col1-->
+          <div class="col-6 col-sm-4 col-md-4 col-lg-3 col align-self-center align-content-right ">
+              <button id="b" type="button" (click)="alert()" class="btn btn-light" style="border-radius: 0px" dta-dismiss="alert"><b>Accept and Close</b></button>
+          </div><!-- col2-->
+      </div><!-- row-->
+  </div>
+

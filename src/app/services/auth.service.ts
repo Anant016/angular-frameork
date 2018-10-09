@@ -60,4 +60,22 @@ export class AuthService {
     localStorage.clear();
 
   }
+
+  delUser(user){
+    let headers=new Headers();
+    console.log('InAuthService')
+    headers.append('Content-Type','application/json');
+
+    return this.http.post('users/deleted',user, {headers:headers})
+      .map(res=>res.json());
+  }
+
+  checkOldp(oldpass){
+    let headers=new Headers();
+    console.log('InAuthService')
+    headers.append('Content-Type','application/json');
+
+    return this.http.post('users/passchange',oldpass, {headers:headers})
+      .map(res=>res.json());
+  }
 }

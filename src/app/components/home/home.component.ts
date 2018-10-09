@@ -12,4 +12,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+   alert(){          
+    var bar=document.getElementById('1');
+        bar.style.display='none';
+    }
+
 }

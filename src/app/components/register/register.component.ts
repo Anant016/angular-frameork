@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
    email:string;
    username:string;
    password:string;
-   
+
 
   constructor(public validateService:ValidateService,
               public router:Router,
@@ -25,22 +25,22 @@ export class RegisterComponent implements OnInit {
               private authService:AuthService) { }
 
   ngOnInit() {
-   
+
   }
 
   getStat5(){
     let check=this.password;
-    console.log(check);
-    
-    if (JSON.stringify(check).length>7){
+
+
+    if (JSON.stringify(check).length>=10){
       return true;
     }
     else{
       return false;
     }
-     
+
   }
-  
+
   getStat1(){
     let check=this.password;
     if (/[a-z]/.test(check)){
@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     else{
       return false;
     }
-    
+
   }
   getStat2(){
     let check=this.password;
@@ -59,17 +59,17 @@ export class RegisterComponent implements OnInit {
     else{
       return false;
     }
-    
+
   }
   getStat3(){
     let check=this.password;
-    if (/\W/.test(check)){
+    if (/\W/.test(check)||/[_]/.test(check)){
       return true;
     }
     else{
       return false;
     }
-    
+
   }
   getStat4(){
     let check=this.password;
@@ -79,9 +79,9 @@ export class RegisterComponent implements OnInit {
     else{
       return false;
     }
-    
+
   }
-  
+
   onRegisterSubmit(){
     const user={
       name:this.name,
@@ -102,7 +102,7 @@ export class RegisterComponent implements OnInit {
     }
 
     if(!this.validateService.passStrength(user.password)){
-      
+
       return false;
     }
 
@@ -111,14 +111,14 @@ export class RegisterComponent implements OnInit {
     this.authService.registerUser(user).subscribe(data=>{
       if(data.success){
         this.flashMessage.show(data.msg,{cssClass:'alert-success',timeout:3000});
-        this.router.navigate(['login']);       
+        this.router.navigate(['login']);
       }
       else{
         this.flashMessage.show(data.msg,{cssClass:'alert-success',timeout:3000});
-        this.router.navigate(['register']);   
+        this.router.navigate(['register']);
       }
     });
 
 
-  }//OnRegisterSubmit 
+  }//OnRegisterSubmit
 }

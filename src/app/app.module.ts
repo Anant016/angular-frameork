@@ -19,15 +19,24 @@ import{AuthGuard} from './guards/auth.guard';
 import {ValidateService } from './services/validate.service';
 import {AuthService } from './services/auth.service';
 
+import {NgxCaptchaModule} from 'ngx-captcha';
+import{ReactiveFormsModule} from '@angular/forms';
+
+import {ReCaptchaV3Service} from 'ngx-captcha';
+import { DeleteComponent } from './components/delete/delete.component';
+import { PasschangeComponent } from './components/passchange/passchange.component';
 
 const appRoutes: Routes=[
   {path:'', component:HomeComponent},
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'profile', component:ProfileComponent}//,canActivate:['AuthGuard']
-
+  {path:'profile', component:ProfileComponent},
+  {path:'delete',component:DeleteComponent},
+  {path:'home',component:HomeComponent},
+  {path:'passchange',component:PasschangeComponent}
 ]
+
 
 @NgModule({
   declarations: [
@@ -37,16 +46,29 @@ const appRoutes: Routes=[
     ProfileComponent,
     DashboardComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    DeleteComponent,
+    PasschangeComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ],
-  providers: [ValidateService,AuthService,AuthGuard],
+  providers: [ValidateService,
+              AuthService,
+              AuthGuard,
+              
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+/*{
+                provide: AuthServiceConfig,
+                useFactory: getAuthServiceConfigs
+              // }*/
+//SocialLoginModule
