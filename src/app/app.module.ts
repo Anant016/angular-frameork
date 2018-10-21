@@ -72,12 +72,12 @@ const appRoutes: Routes=[
     ReactiveFormsModule,
     NgxCaptchaModule,
     AgmCoreModule.forRoot({
-      apiKey:'AIzaSyC-uKPU3cyx1McvKtf2fFZgfQhoX6Zle6k'
+      apiKey:'yor key'
     }),
     AgmSnazzyInfoWindowModule,
     CommonModule,
 
-    NgxStripeModule.forRoot('pk_test_EwdW4ScpzL1oRXGyjfCPXj1b'),
+    NgxStripeModule.forRoot('your key'),
  
   ],
   providers: [ValidateService,
