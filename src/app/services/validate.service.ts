@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {FlashMessagesService} from 'angular2-flash-messages';
-
+import {Router} from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class ValidateService {
    pass:boolean=true;
-  constructor(private flashMessages:FlashMessagesService) { }
+  constructor(private flashMessages:FlashMessagesService,
+              private router:Router) { }
 
   //Validate Register
   validateRegister(user){
@@ -20,10 +21,17 @@ export class ValidateService {
   //CheckPassword Stregth
   
   passStrength(password){
-    if (password.length < 8)
+      this.pass=true;
+      if(password==undefined){
+        console.log('waiting');
+      }  
+      else{
+      if (password.length < 8)
      { this.flashMessages.show('Password Must Contain atleast 8 characters.',{cssClass:'alert-danger',timeout:6000});
       this.pass=false;
      }
+    }
+
     if (!/[A-Z]/.test(password)){
       this.flashMessages.show('Password must contain one capital letter.',{cssClass:'alert-danger',timeout:6000});
       this.pass=false;
@@ -43,8 +51,10 @@ export class ValidateService {
     
     if(this.pass){
       return true;
+    
     }
     else{
+   
       return false;
     }
   }

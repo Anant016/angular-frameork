@@ -9,18 +9,39 @@
       <li class="list-item">Username:{{user.username}}</li>
       <li class="list-item">Email:{{user.email}}</li>
     </ul>
+
+    <div id="download">
+       <a href="../../../assets/file.doc" download>File Download</a><br>
+       <a href="../../../assets/pic.png" download>Pic Download</a>
+       <!--  <form (submit)="docDownload()">
+         <button type="submit">Download!</button>
+       </form>-->  
+    </div>
+  
+
+    <div id="mapsss">
+            <a [routerLink]="['/map']">
+                <img src="../../../assets/gmaps.png" style="width:50px;height:50px">
+            </a>
+    </div>
+
+    <div id="pay">
+        
+            <a href="https://www.instamojo.com/@anantrung">Pay</a>
+    </div>
+
     </div><!--col1-->
-   
-    <div style="text-align: right" class="col">
+
+    <div style="text-align: right" class="col"><!--col2 s-->
         <button style="width:300px;height:60px" class="btn" (click)="collapse()"  >
             Settings<br><i class="tiny material-icons align-items-center">all_inclusive</i></button>
         <div id="idpara" style="display:none" class="mt-3">
            <button  type="button" style="text-align:center;width: 170px" [routerLink]="['/delete']" class="btn " >Delete my Account.</button><br><br>
            <button  type="button"style="text-align:center;width: 170px"  [routerLink]="['/passchange']" class="btn " >Change Password.</button>
-       </div><!--col2-->
+       </div><!--col2 e-->
     </div>
   </div><!--row-->
-    
+
 </div>
 
 

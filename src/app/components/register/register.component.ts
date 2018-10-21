@@ -100,7 +100,6 @@ export class RegisterComponent implements OnInit {
     }
 
     if(!this.validateService.passStrength(user.password)){
-
       return false;
     }
 

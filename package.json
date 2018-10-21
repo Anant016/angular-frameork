@@ -11,6 +11,8 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.5",
+    "@agm/snazzy-info-window": "^1.0.0-beta.5",
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
@@ -25,10 +27,13 @@
     "angular2-flash-messages": "^3.0.1",
     "angular2-jwt": "^0.2.3",
     "core-js": "^2.5.4",
+    "emailjs": "^2.2.0",
     "ngx-captcha": "^5.0.4",
+    "ngx-stripe": "^0.8.2",
     "nodemailer": "^4.6.8",
     "rxjs": "~6.2.0",
     "rxjs-compat": "^6.3.3",
+    "snazzy-info-window": "^1.1.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

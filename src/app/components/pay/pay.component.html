@@ -1,0 +1,11 @@
+<div *ngIf="user">
+
+    <form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
+        <input type="text" formControlName="name" placeholder="Jane Doe">
+        <div id="card-element" class="field"></div>
+        <button type="submit">
+          BUY
+        </button>
+      </form>
+
+</div>

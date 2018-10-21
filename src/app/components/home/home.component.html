@@ -1,14 +1,19 @@
 <div class="jumbotron text-center">
     <h1 class="lead " style="font-size: 60px" >Anant Rungta</h1>
     <p class="lead">Welcome to my site<small> -this is Anant Rungta</small></p><br>
-    <div>
+    <div *ngIf="!user">
       <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
       <a class="btn btn-primary" [routerLink]="['/login']">Login</a>
     </div>
   </div>
 
+  <style>
+    @media screen and (max-width: 400px) {
+      #accept { display: none; }   /* till 400px */
+    }
+  </style>
 
-  <div id="1" class="fixed-bottom alert alert-dismissible fade show" style="background-color: black; border-radius: 0px">
+  <div id="accept" class="fixed-bottom alert alert-dismissible fade show" style="background-color: black; border-radius: 0px">
       <div style="color: white" class="row">
           <div class="col ml-4 mb-3 mt-2">
               This websites place cookies on your device to give you the best user experience. By using our websites, you agree to the placement of these cookies. To learn more, read our<br> <a href="#"><u>Privacy Policy.</u></a>
